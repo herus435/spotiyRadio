@@ -21,8 +21,8 @@ CURRENT_ACCESS_TOKEN = None
 
 app = FastAPI()
 
-CLIENT_ID = "63873874053f45699ee0925247246c57"
-REDIRECT_URI = "http://127.0.0.1:8080/callback"
+CLIENT_ID = "CLIENT_ID"
+REDIRECT_URI = "CLIENT_URL"
 
 # Faz 1'de belirtilen gerekli scope'lar
 SCOPES = [
