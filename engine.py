@@ -74,7 +74,7 @@ def score_and_select_best_candidate(core_set_vector: np.ndarray, candidates: lis
 
 if __name__ == "__main__":
     # Test için daha önce terminalden aldığın access_token'ı buraya yapıştır
-    TEST_TOKEN = "BQBSR3WyqweyRpFndmcgrjwZRwDHvX7lm5tajCatpWPzv3HBd0I9oqc7V1xdd3P8kg2vLk9TKsMsYKOP1Oqrskn6LTIeu-sLKJ-RKi8jt9RdfTpdeZQ6zLoFSToJt5fjOoOmtajjcuLuNwBg5F-5jx9dWiQZz-mcmKe6M_600akT8MKLNbdiOft_H-gzMjp4-wieZRF9m-n7os8P0EYY_xN1bc43x2pBPndmxSE7t01t67T-FqMC_1rZ_UWeGoWzqy6l511E4YKlJYaHt2frV3TCgUCY5Bym9LFQgPeCmzKuDs9D" 
+    TEST_TOKEN = "YOUR_TEST_TOKEN" 
     
     # Test etmek istediğimiz örnek bir tür (genre) belirleyelim
     HEDEF_TUR = "turkish rock" 
