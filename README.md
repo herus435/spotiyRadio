@@ -30,9 +30,11 @@ Bu proje, Spotify API kısıtlamalarını (Recommendations ve Audio Features gib
 📂 Proje Yapısı
 ---------------
 
-Plaintext
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   spotifyRadio/  │  ├── main.py             # FastAPI ana sunucusu ve OAuth rotaları  ├── engine.py           # Vektör motoru, Proxy enerji ve benzerlik hesaplamaları  ├── templates/  │   └── index.html      # Spotify Web Playback SDK arayüzü  └── requirements.txt    # Gerekli Python kütüphaneleri   `
+spotifyRadio/  │    ├── main.py             # FastAPI ana sunucusu ve OAuth rotaları  
+                    ├── engine.py           # Vektör motoru, Proxy enerji ve benzerlik hesaplamaları  
+                    ├── templates/     
+                    │   └── index.html      # Spotify Web Playback SDK arayüzü  
+                    └── requirements.txt    # Gerekli Python kütüphaneleri
 
 ⚙️ Kurulum ve Çalıştırma
 ------------------------
