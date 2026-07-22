@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Akıllı Radyo İstasyonu</title>
+</head>
+<body>
+    <h1>Akıllı Radyo İstasyonu Aktif 📻</h1>
+    <button id="start-radio">Radyoyu Başlat (Autoplay İzni İçin)</button>
+    <p id="status">Durum: Bekleniyor...</p>
+
+    <!-- Spotify Web Playback SDK'yı ekliyoruz -->
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script>
+        // FastAPI'den aldığımız token'ı buraya aktaracağız
+        const ACCESS_TOKEN = '{{ access_token }}';
+let deviceId = "";
+let isFetching = false; // Çoklu istek atılmasını engelleyecek kilit
+
+window.onSpotifyWebPlaybackSDKReady = () => {
+    const player = new Spotify.Player({
+        name: 'Akıllı Radyo Web Player',
+        getOAuthToken: cb => { cb(ACCESS_TOKEN); },
+        volume: 0.5
+    });
+
+    player.addListener('ready', ({ device_id }) => {
+        console.log('Radyo çalmaya hazır! Device ID:', device_id);
+        deviceId = device_id;
+        document.getElementById('status').innerText = "Durum: Bağlandı! Oynatılmaya hazır.";
+    });
+
+    player.addListener('player_state_changed', state => {
+        if (!state) return;
+
+        const position = state.position;
+        const duration = state.duration;
+        const kalanSure = duration - position;
+
+        // Şarkının bitmesine ~20 saniye kala ve eğer o an istek atılmıyorsa
+        if (kalanSure < 20000 && kalanSure > 18000 && !isFetching) {
+            console.log("Şarkı bitmek üzere! Öneri motoruna 'Radyoyu Besle' sinyali gönderiliyor...");
+            isFetching = true; // Kilidi kapat
+            
+            // Backend'deki öneri motorunu çalıştır
+            fetch('/feed-queue')
+                .then(response => response.json())
+                .then(data => {
+                    if(data.status === "success") {
+                        console.log(`✅ Motor Yeni Şarkı Seçti ve Kuyruğa Ekledi: ${data.added_track} - ${data.artist}`);
+                    } else {
+                        console.error("❌ Motor Hatası:", data);
+                    }
+                    
+                    // Şarkı tamamen geçtikten sonra bir sonraki parça için kilidi tekrar aç
+                    setTimeout(() => { isFetching = false; }, 25000); 
+                })
+                .catch(err => console.error("Bağlantı hatası:", err));
+        }
+    });
+
+    player.addListener('initialization_error', ({ message }) => { console.error(message); });
+    player.addListener('authentication_error', ({ message }) => { console.error(message); });
+    player.addListener('account_error', ({ message }) => { console.error(message); });
+
+    document.getElementById('start-radio').onclick = () => {
+        player.connect();
+    };
+};
+    </script>
+</body>
+</html>
