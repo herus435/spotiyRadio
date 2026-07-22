@@ -39,21 +39,18 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 
 ### 1\. Depoyu Klonlayın
 
-Bash
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/KULLANICI_ADIN/spotifyRadio.git  cd spotifyRadio   `
+git clone https://github.com/herus435/spotifyRadio.git
+cd spotifyRadio
 
 ### 2\. Sanal Ortam Oluşturun ve Aktif Edin
 
-Bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   conda create -n radyo_env python=3.10  conda activate radyo_env   `
+conda create -n radyo_env python=3.10
+conda activate radyo_env
 
 ### 3\. Gerekli Kütüphaneleri Yükleyin
 
-Bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pip install fastapi uvicorn requests numpy scikit-learn jinja2   `
+pip install fastapi uvicorn requests numpy scikit-learn jinja2
 
 ### 4\. Spotify Developer Bilgilerini Ayarlayın
 
@@ -61,9 +58,7 @@ main.py içerisindeki CLIENT\_ID, CLIENT\_SECRET ve REDIRECT\_URI alanlarını k
 
 ### 5\. Sunucuyu Başlatın
 
-Bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   uvicorn main:app --host 127.0.0.1 --port 8080 --reload   `
+uvicorn main:app --host 127.0.0.1 --port 8080 --reload
 
 ### 6\. Kullanım
 
