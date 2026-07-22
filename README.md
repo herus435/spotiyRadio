@@ -42,30 +42,30 @@ spotifyRadio/  │    ├── main.py             # FastAPI ana sunucusu ve OA
 ### 1\. Depoyu Klonlayın
 
 
-git clone https://github.com/herus435/spotifyRadio.git
-cd spotifyRadio
+*git clone https://github.com/herus435/spotifyRadio.git
+*cd spotifyRadio
 
 ### 2\. Sanal Ortam Oluşturun ve Aktif Edin
 
-conda create -n radyo_env python=3.10
-conda activate radyo_env
+*conda create -n radyo_env python=3.10
+*conda activate radyo_env
 
 ### 3\. Gerekli Kütüphaneleri Yükleyin
 
-pip install fastapi uvicorn requests numpy scikit-learn jinja2
+*pip install fastapi uvicorn requests numpy scikit-learn jinja2
 
 ### 4\. Spotify Developer Bilgilerini Ayarlayın
 
-main.py içerisindeki CLIENT\_ID, CLIENT\_SECRET ve REDIRECT\_URI alanlarını kendi Spotify Developer paneli bilgilerinizle güncelleyin.
+*main.py içerisindeki CLIENT\_ID, CLIENT\_SECRET ve REDIRECT\_URI alanlarını kendi Spotify Developer paneli bilgilerinizle güncelleyin.
 
 ### 5\. Sunucuyu Başlatın
 
-uvicorn main:app --host 127.0.0.1 --port 8080 --reload
+*uvicorn main:app --host 127.0.0.1 --port 8080 --reload
 
 ### 6\. Kullanım
 
-1.  Tarayıcınızda \[http://127.0.0.1:8080/login\](http://127.0.0.1:8080/login) adresine giderek Spotify hesabınızla giriş yapın.
+*1.  Tarayıcınızda \[http://127.0.0.1:8080/login\](http://127.0.0.1:8080/login) adresine giderek Spotify hesabınızla giriş yapın.
     
-2.  Otomatik olarak yönlendirileceğiniz \[http://127.0.0.1:8080/\](http://127.0.0.1:8080/) sayfasında **"Radyoyu Başlat"** butonuna tıklayın.
+*2.  Otomatik olarak yönlendirileceğiniz \[http://127.0.0.1:8080/\](http://127.0.0.1:8080/) sayfasında **"Radyoyu Başlat"** butonuna tıklayın.
     
-3.  Spotify uygulamanızdan ses çıkış cihazı olarak **"Akıllı Radyo Web Player"** seçeneğini seçerek müziğin akışını başlatın.
+*3.  Spotify uygulamanızdan ses çıkış cihazı olarak **"Akıllı Radyo Web Player"** seçeneğini seçerek müziğin akışını başlatın.
